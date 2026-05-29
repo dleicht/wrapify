@@ -10,7 +10,7 @@
 Wrapify simply keeps calling zotify until the total number of songs was downloaded.
 
 ## Configuration
-The idea is to tell wrapify how many files we want to download and which directory to watch for incoming files in order to determine wheter your downloads are complete. Zotify keeps track of the individual files itself, but in case it fails at some point for whatever reason, your downloads will be incomplete. In such a case wrapify will restart zotify (we call this 'taking another attempt') because it noticed that files are missing. Zotify will then automatically try to download them.
+The idea is to tell wrapify how many files we want to download and which directory to watch for incoming files in order to determine whether your downloads are complete. Zotify keeps track of the individual files itself, but in case it fails at some point for whatever reason, your downloads will be incomplete. In such a case, wrapify will restart zotify (we call this 'taking another attempt') because it noticed that files are missing. Zotify will then automatically try to download them.
 
 Consult your zotify config.json to figure out where the files are going. By default it will create subdirectories based on a template like this `{artist}/{album}/{album_num} - {artist} - {song_name}.{ext}`
 
