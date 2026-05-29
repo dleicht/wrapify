@@ -19,9 +19,9 @@ You can tell wrapify to watch the subdirectories accordingly, or you can configu
 ## How to use it
 It's very simple really:
 
-`usage:   python wrapify.py <num_songs> <ext> <spotify_url> <download_dir>`
+`usage:   python wrapify.py <num_songs> <ext> <download_dir> <spotify_url>`
 
-`example: python wrapify.py 42 ogg https://open.spotify.com/playlist/PLAYLIST_ID ~/Music/Zotify`
+`example: python wrapify.py 42 ogg ~/Music/Zotify https://open.spotify.com/playlist/PLAYLIST_ID`
 
 As of right now (June 2026) probably only [this fork of zotify](https://github.com/Googolplexed0/zotify) still works properly. So make sure to use that.
 
