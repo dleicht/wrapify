@@ -35,8 +35,8 @@ MAX_STALE    = 5
 # ──────────────────────────────────────────────────────────────────────────────
 
 def usage():
-    print("usage:   python wrapify.py <num_songs> <ext> <spotify_url> <download_dir>")
-    print("example: python wrapify.py 42 ogg https://open.spotify.com/playlist/PLAYLIST_ID ~/Music/Zotify")
+    print("usage:   python wrapify.py <num_songs> <ext> <download_dir> <spotify_url>")
+    print("example: python wrapify.py 42 ogg ~/Music/Zotify https://open.spotify.com/playlist/PLAYLIST_ID")
     sys.exit(1)
 
 if len(sys.argv) != 5:
@@ -55,12 +55,12 @@ if file_ext not in extensions:
     print(f"❌ Error: invalid file extension given.\nValid options are {extensions}.\nFYI: you'll need ffmpeg for anything else than ogg.\n")
     usage()
 
-spotify_url = sys.argv[3]
+spotify_url = sys.argv[4]
 if "spotify.com" not in spotify_url:
     print(f"❌ Error: '{spotify_url}' doesn't look like a valid spotify_url.")
     usage()
 
-download_dir = os.path.expanduser(sys.argv[4])
+download_dir = os.path.expanduser(sys.argv[3])
 if not os.path.isdir(download_dir):
     print(f"⚠️ Caution: '{download_dir}' doesn't exist, yet. I will create it for you. Make sure zotify puts the files there (i.e. check your config.json).")
     try:
@@ -96,5 +96,5 @@ while count_downloaded() < total:
 
     time.sleep(RETRY_DELAY)
 
-print(f"\n✅ All {total} songs downloaded from {spotify_url}.")
+print(f"\n✅ All {total} songs downloaded from {spotify_url} in {attempt} attempts.")
 sys.exit(0)
